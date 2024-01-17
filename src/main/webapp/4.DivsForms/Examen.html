@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejemplo de diseño fluido con dos columnas</title>
+    <link rel="stylesheet" href="estilos_examen.css">
+    <script type="text/javascript">
+	    function closeSession() {
+			alert("Adios!!")
+			document.getElementById("contenido").innerHTML = '<object type="text/html" height="650px" width="100%" data="cierre_sesion.html"></object>';
+		}
+	    function changeColor(fila, color) {
+	    	if (fila == "1"){
+	    		document.getElementById("celda11").style.backgroundColor=color;
+	    		document.getElementById("celda12").style.backgroundColor=color;
+	    		document.getElementById("celda13").style.backgroundColor=color;
+	    	}else if(fila == "2"){
+	    		document.getElementById("celda21").style.backgroundColor=color;
+	    		document.getElementById("celda22").style.backgroundColor=color;
+	    		document.getElementById("celda23").style.backgroundColor=color;
+	    	}else{
+	    		document.getElementById("celda31").style.backgroundColor=color;
+	    		document.getElementById("celda32").style.backgroundColor=color;
+	    		document.getElementById("celda33").style.backgroundColor=color;
+	    	}
+	    }
+	</script>
+  </head>
+  <body>
+    <div id="contenedor">
+      <div id="cabecera">
+        <p align="center">Examen 04/11/2021</p>
+      </div>
+      <div id="columnas">
+        <div id="menu">
+          <ol>
+            <li><u>Fila 1</u>
+            	<ul>
+            		<li><a href="#" onclick="changeColor('1','red')">Rojo</a></li>
+            		<li><a href="#" onclick="changeColor('1','white')">Blanco</a></li>
+            		<li><a href="#" onclick="changeColor('1','green')">Verde</a></li>
+            	</ul>
+            </li>
+            <li><u>Fila 2</u>
+            	<ul>
+            		<li><a href="#" onclick="changeColor('2','red')">Rojo</a></li>
+            		<li><a href="#" onclick="changeColor('2','white')">Blanco</a></li>
+            		<li><a href="#" onclick="changeColor('2','green')">Verde</a></li>
+            	</ul>
+            </li>
+            <li><u>Fila 3</u>
+            	<ul>
+            		<li><a href="#" onclick="changeColor('3','red')">Rojo</a></li>
+            		<li><a href="#" onclick="changeColor('3','white')">Blanco</a></li>
+            		<li><a href="#" onclick="changeColor('3','green')">Verde</a></li>
+            	</ul>
+            </li>
+            <li><a href="#" onclick="closeSession();">Salir</a></li>
+          </ol>
+        </div>
+        <div id="contenido">
+        	<h2 align="center">Filtro</h2>
+        	<form>
+        		<br>Ciudad: <select><option>Madrid</option><option>Barcelona</option><option>Valencia</option></select>
+        		<br>Año: <input type="number"/>
+        		<br>Población entre: <input type="number"/> y <input type="number"/> 
+        		<br><input type="submit" value="Filtrar"/>
+        	</form>	
+        	<br>
+          <table>
+          	<caption>POBLACION TOTAL POR CIUDAD EN 2021</caption>
+          	<thead>
+          		<tr>
+       				<th>Ciudad</th>
+       				<th>Año</th>
+       				<th>Población</th>
+       				
+       			<tr>
+          	</thead>
+          	<tbody>
+      			<tr>
+      				<td id="celda11"><a href="https://madrid.es/" target="_blank">Madrid</a></td>
+      				<td id="celda13">2021</td>
+      				<td id="celda12">3,33 millones</td>
+      			<tr>
+          		<tr>
+          			<td id="celda21"><a href="https://valencia.es/" target="_blank">Valencia</a></td>
+          			<td id="celda23">2021</td>
+          			<td id="celda22">800 mil</td>
+          		<tr>
+          		<tr>
+          			<td id="celda31"><a href="https://ajuntament.barcelona.cat/es" target="_blank">Barcelona</a></td>
+          			<td id="celda33">2021</td>
+          			<td id="celda32">1,66 millones</td>
+          		<tr>
+          	</tbody>
+          	<tfoot>
+          		<tr>
+          			<td colspan="2">TOTAL</td>
+          			<td>5,7 millones</td>
+          		</tr>
+          	</tfoot>
+          </table>
+        </div>
+      </div>
+      <div id="pie">
+        <p>CENTRO DE ESTUDIOS PROFESIONALES ©<a href="http://www.ucjc.edu/" target="_blank">Universidad Camilo Jose Cela</a> 2021</p>
+      </div>
+    </div>
+  </body>
+</html>
