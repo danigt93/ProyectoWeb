@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selectores de jQuery</title>
+    <style>
+    	.titulo{
+		    background-color: orange;
+		}
+    </style>
+    <!-- Para trabajar con jQuery es obligatorio tener esta libreria importada -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+	<H1>TITULO DE LA PÁGINA</H1>
+    <div>
+        <p id="hello">BIENVENIDO</p>
+    </div>
+ 
+    
+    <script>
+        $(document).ready(function() {
+        	//Selector de id
+            $('#hello').text('Hola Mundo jQuery!');
+            //Selector de etiqueta
+            $("p").css("background-color", "pink");
+          	//Selector de clase
+            $(".titulo").css("color", "red");
+          	
+        	$("h1,div,p").css("font-size",40)
+          	//Multiples tipos de selectores
+          	//https://www.anerbarrena.com/jquery-selectors-selectores-4768/
+          	
+          	$("div > p").css("font-size",60)//Solo los p que sean hijos de div
+          	$("div > p").css("background-color", "cyan")
+          	
+          	$(":text").css("background-color", "cyan")
+          	$(":text").val("Hola2")
+        });
+    </script>
+    
+    <p>Probando jQuery</p>
+    <p class="titulo">Probando jQuery</p>
+    <p class="titulo">Probando jQuery</p>
+    
+    <input type="text" id="cajatexto1"></input>
+    <input type="text" id="cajatexto2"></input>
+    <input type="text" id="cajatexto3"></input>
+    
+    <script>
+       $(document).ready(function() {
+         	$("#cajatexto1").val("Cambio")
+       });
+    </script>
+</body>
+</html>

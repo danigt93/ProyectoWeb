@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript" src="./js/ahorcado2.js"></script>
+<body>
+	<H1>AHORCADO</H1>
+
+	<form name="palabra">
+		<input type="text" id="letra1" maxlength="1" size="5" disabled="disabled"> 
+		<input type="text" id="letra2" maxlength="1" size="5" disabled="disabled"> 
+		<input type="text" id="letra3" maxlength="1" size="5" disabled="disabled">
+		<input type="text" id="letra4" maxlength="1" size="5" disabled="disabled"> 
+		<input type="text" id="letra5" maxlength="1" size="5" disabled="disabled"> 
+		<br> <br> <br> 
+		Letra: <input type="text" id="letraPrueba" maxlength="1" size="2" onkeyup="convertirMayuscula('red')"> 
+		
+		<input onclick="probarLetra()" id="botonProbar" type="button" value="Probar" ><br> 
+		<input type="button" value="Reiniciar" onclick="reiniciar()">
+	</form>
+	<p id="texto">BIENVENIDO</p>
+	<p>Tienes <span style="color:red;" id="oportunidades">5</span> oportunidades</p>
+	
+</body>
+</html>
+

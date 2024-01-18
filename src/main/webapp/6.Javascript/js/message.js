@@ -10,6 +10,17 @@ function msg() {
 	 */
 }
 
+function msg2() {
+	// Comentario de una linea en javascript
+	alert("Entra")
+	//document.getElementById("test").value="Test";
+	document.getElementsByName("test").value="Test2";
+	/*
+	 * Comentarios de varias lineas, como ves es igual que en Java
+	 */
+}
+
+
 function sum(num1, num2) {
 	console.log("Numero1: " + num1);
 	console.log("Numero2: " + num2);

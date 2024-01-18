@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selectores de jQuery</title>
+    <style>
+    	.titulo{
+		    background-color: orange;
+		}
+    </style>
+    <!-- Para trabajar con jQuery es obligatorio tener esta libreria importada -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+	    function alertar (){
+			alert("Enviando una alerta");
+		}
+    </script>
+</head>
+<body id="body_eventos">
+	<H1>TITULO DE LA PÁGINA 1</H1>
+	<H2>TITULO DE LA PÁGINA 2</H2>
+	<H3>TITULO DE LA PÁGINA 3</H3>
+    <div>
+        <p id="hello">BIENVENIDO</p>
+    </div>
+ 
+    
+    <script>
+    	//https://api.jquery.com/category/events/
+		$(document).ready(function(){ 
+			$('#hello').click(function(){
+				alert($(this).text());
+		    }); 
+		    
+		    $("h2,h3").click(function(){  
+		        $(this).hide();  
+		    });  
+
+		    $("h1").dblclick(function(){
+		    	alert("Entra")
+		       	$("#body_eventos").css("background-color", "red")
+		    });
+		    
+		    $("p").mouseenter(function(){
+		    	$("#body_eventos").css("background-color", "blue")
+		    });
+		    
+		    $("p").mouseleave(function(){
+		    	$("#body_eventos").css("background-color", "green")
+		    });
+		    
+		});
+    
+		$(window).resize(function(){
+			//alert("Alto: " + $(window).height() + " Ancho: " + $(window).width() );
+			console.log("Alto: " + $(window).height() + " Ancho: " + $(window).width() );
+	    });
+    </script>
+    
+    <p>Probando jQuery</p>
+    <p class="titulo">Probando jQuery</p>
+    <p class="titulo">Probando jQuery</p>
+    
+    <input type="text" id="cajatexto1"></input>
+    <input type="text" id="cajatexto2"></input>
+    <input type="text" id="cajatexto3"></input>
+    
+        <script>
+
+    </script>
+</body>
+</html>
