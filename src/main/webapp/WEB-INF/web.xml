@@ -5,23 +5,13 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
-  	<servlet-name>ServletPrueba</servlet-name>
-  	<display-name>ServletPrueba</display-name>
+  	<servlet-name>ServletLeMans</servlet-name>
+  	<display-name>ServletLeMans</display-name>
   	<description></description>
-  	<servlet-class>servlets.ServletPrueba</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>ServletPrueba2</servlet-name>
-  	<display-name>ServletPrueba2</display-name>
-  	<description></description>
-  	<servlet-class>servlets.ServletPrueba</servlet-class>
+  	<servlet-class>servlets.ServletLeMans</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>ServletPrueba</servlet-name>
-  	<url-pattern>/ServletPrueba</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>ServletPrueba2</servlet-name>
-  	<url-pattern>/ServletPrueba2</url-pattern>
+  	<servlet-name>ServletLeMans</servlet-name>
+  	<url-pattern>/ServletLeMans</url-pattern>
   </servlet-mapping>
 </web-app>
