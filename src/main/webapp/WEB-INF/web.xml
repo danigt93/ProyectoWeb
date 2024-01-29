@@ -10,8 +10,32 @@
   	<description></description>
   	<servlet-class>servlets.ServletLeMans</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ServletNew</servlet-name>
+  	<display-name>ServletNew</display-name>
+  	<description></description>
+  	<servlet-class>servlets.ServletNew</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>formularioServlet</servlet-name>
+  	<display-name>formularioServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlets.formulario</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>ServletLeMans</servlet-name>
   	<url-pattern>/ServletLeMans</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ServletNew</servlet-name>
+  	<url-pattern>/ServletNew</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>FS</servlet-name>
+  	<url-pattern>/formulario</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>FS</servlet-name>
+  	<url-pattern>/formulariotest</url-pattern>
   </servlet-mapping>
 </web-app>

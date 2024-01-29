@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Dar de Alta alumno</title>
+<script>
+        function borrarTexto() {
+            document.getElementById('textArea').value = '';
+        }
+</script>
+</head>
+	<body>
+	
+	<form action="/ProyectoWeb/ejercicioHtml/altaalumno.html" method="post">
+	        <h2><p>Inicio Sesion</p></h2>
+	        
+	      Nombre: 	 <input type="text"><br><br>
+	      Apellidos: <input type="text"><br><br>
+	      Sexo:		 <br>
+	      Male <input type="radio"> Female <input type="radio"> NS/NC <input type="radio"><br><br>
+
+		    <label for="opciones">Selecciona una asignatura:</label>
+		    <select id="opciones" name="asignaturas"><br>
+				
+		        <option value="opcion1">Html</option>
+		        <option value="opcion2">Java</option>
+		        <option value="opcion3">Python</option>
+		        
+		    </select><br><br>
+	      
+	     <textarea id="textArea" rows="5" cols="20" onclick="borrarTexto()">Espacio creado para escribir</textarea><br><br>
+	      
+	      
+	     <input type="submit" value="SUBMIT">
+	      
+	</form>
+	
+	
+	</body>
+</html>

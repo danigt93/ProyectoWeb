@@ -54,7 +54,7 @@ public class ServletLeMans extends HttpServlet {
 			response.getWriter().append("<H5>INSERTADO CORRECTAMENTE</h5>");
 			response.getWriter().append("<table>");
 			response.getWriter().append("<th>Nombre</th><th>Apellidos</th>");
-			for (String usuariox : usuarios) {
+			for (String usuario1 : usuarios) {
 				response.getWriter().append("<tr>");
 				
 				response.getWriter().append("</tr>");
