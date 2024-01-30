@@ -11,17 +11,21 @@
 </head>
 	<body>
 	
-	<form action="/ProyectoWeb/ejercicioHtml/altaalumno.html" method="post">
+	<input action="http://localhost:8081/ProyectoWeb/formulario" method="post" name="AlumnoForm">
 	        <h2><p>Inicio Sesion</p></h2>
 	        
-	      Nombre: 	 <input type="text"><br><br>
-	      Apellidos: <input type="text"><br><br>
+	      Nombre: 	 <input type="text" name="nombre"><br><br>
+	      Apellidos: <input type="text" name="apellidos"><br><br>
 	      Sexo:		 <br>
-	      Male <input type="radio"> Female <input type="radio"> NS/NC <input type="radio"><br><br>
+	      <input type="radio" name="sex" value="H"> Hombre </input>
+	      <input type="radio" name="sex" value="M"> Mujer </input>
+	      <input type="radio" name="sex" value="O"> Otros </input>
+	      <br><br>
 
-		    <label for="opciones">Selecciona una asignatura:</label>
-		    <select id="opciones" name="asignaturas"><br>
+		    
+		    <select name="asignaturas" multiple><br>
 				
+				<option value="0">Seleccione una opcion</option>
 		        <option value="opcion1">Html</option>
 		        <option value="opcion2">Java</option>
 		        <option value="opcion3">Python</option>
@@ -31,7 +35,7 @@
 	     <textarea id="textArea" rows="5" cols="20" onclick="borrarTexto()">Espacio creado para escribir</textarea><br><br>
 	      
 	      
-	     <input type="submit" value="SUBMIT">
+	     <input type="submit" value="Guardar">
 	      
 	</form>
 	
