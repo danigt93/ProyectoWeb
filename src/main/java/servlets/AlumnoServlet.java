@@ -4,25 +4,29 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.Servlet;
-import javax.servlet.ServletConfig;
-import javax.servlet.http.HttpSession;
-
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.Servlet;
+import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import pojos.Alumno;
 
-public class servletEjercicio extends HttpServlet {
+/**
+ * Servlet implementation class AlumnoServlet
+ */
+
+public class AlumnoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private String texto;
 	private List<Alumno> alumnos; 
     /**
      * Default constructor. 
      */
-    public servletEjercicio() {
-        System.out.println("Constuctor Alumno");
+    public AlumnoServlet() {
+        System.out.println("Constuctor AlumnoServlet");
     }
 
 	/**
@@ -46,7 +50,7 @@ public class servletEjercicio extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		HttpSession session = (HttpSession) request.getSession();
+		HttpSession session = request.getSession();
 		System.out.println(session.getId());
 		
 		String nombre = request.getParameter("nombre");
@@ -65,7 +69,6 @@ public class servletEjercicio extends HttpServlet {
 		
 		List<Alumno> alumnoUsuario = new ArrayList();
 		if (session.getAttribute("listadoAlumnos")==null) {
-			
 			alumnoUsuario.add(alumno);
 			session.setAttribute("listadoAlumnos", alumnoUsuario);
 		}else {
@@ -79,21 +82,10 @@ public class servletEjercicio extends HttpServlet {
 			response.getWriter().append(texto + alumn.getNombre() + " "+ alumn.getApellidos() +"\n");
 		}
 		
-		String html = "<!DOCTYPE html>"+
-		"<html>"+
-		"<head>"+
-		"<meta charset='ISO-8859-1'>"+
-		"<title>Insert title here</title>"+
-		"</head>"+
-		"<body>";
 
-		for (int i=0; i<5; i++) {
-			html+= "<p>Esto es una prueba de jsp</p>";
-		}
-
-		html+="</body>"+ "</html>";
-		
-		response.getWriter().append(html);
+		request.setAttribute("atributoListadoAlumnos", alumnoUsuario);
+		RequestDispatcher rd = request.getRequestDispatcher("ejercicioalumno/listadoAlumnos.jsp"); 
+		rd.forward(request, response);
 		
 		
 	}

@@ -3,11 +3,29 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Dar de Alta alumno</title>
-<script>
-        function borrarTexto() {
-            document.getElementById('textArea').value = '';
-        }
+
+<script type="text/javascript">
+    	//https://api.jquery.com/category/events/
+		/*$(document).ready(function(){
+			
+			$('#AlumnoForm').submit(function(){
+				
+				alert($('#asignatura').val())
+				if ($('#asignatura').val() ==0){
+					alert("Debes seleccionar una asignatura")
+					$('#asignatura').focus();
+					return false
+				}else{
+					alert("Todo esta correcto")
+					return true
+				}
+				
+				
+		    }); 
+		});*/
+		
 </script>
+ 
 </head>
 	<body>
 	
@@ -35,10 +53,40 @@
 	     <textarea id="textArea" rows="5" cols="20" onclick="borrarTexto()">Espacio creado para escribir</textarea><br><br>
 	      
 	      
-	     <input id="guardar" type="submit" value="Guardar">
+	     <input id="guardarBtn" value="Guardar">
 	      
 	</form>
 	
+	<script>
+		var guardarBtn = document.getElementById('guardarBtn');
+        guardarBtn.addEventListener('click', function() {
+            location.reload();
+        });
+        
+    </script>
+        
+    <script>
+		
+		 function borrarTexto() {
+            document.getElementById('textArea').value = '';
+        }
+		
+	</script>    
+        
+	<script type="text/javascript">
+		
+		function enviar(){
+			//alert(document.getElementById("asignatura").value)
+			if (document.getElementById("asignatura").value ==0){
+				//alert("Debes seleccionar una asignatura")
+				document.getElementById("asignatura").focus()
+				return false
+			}else{
+				//alert("Todo esta correcto")
+				return true
+			}
+		}
+</script>
 	
 	</body>
 </html>

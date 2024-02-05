@@ -12,15 +12,12 @@
 
 <ol>
 <%
-	List <String> colores = new ArrayList(); 
-	colores.add("Rojo");
-	colores.add("Azul");
-	colores.add("Amarillo");
-	colores.add("Verde");
-	for(String color : colores ) {
+	List <String> usuarios = new ArrayList(); 
+	usuarios.add("usuario");
+	for(String usuario : usuarios ) {
 %> 
 
-<li><%= color %></li>
+<li><%= usuario %></li>
 
 <%  } %>
 </ol>
