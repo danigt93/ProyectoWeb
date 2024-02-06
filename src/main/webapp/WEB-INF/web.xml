@@ -4,32 +4,76 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  
+  
   <servlet>
-  	<servlet-name>ServletLeMans</servlet-name>
-  	<display-name>ServletLeMans</display-name>
+  	<servlet-name>sp2</servlet-name>
+  	<display-name>ServletPrueba2</display-name>
   	<description></description>
-  	<servlet-class>servlets.ServletLeMans</servlet-class>
+  	<servlet-class>servlets.ServletPrueba</servlet-class>
   </servlet>
+  
+  
+  
   
   <servlet>
   	<servlet-name>FS</servlet-name>
-  	<display-name>formularioServlet</display-name>
+  	<display-name>FormularioServlet</display-name>
   	<description></description>
-  	<servlet-class>servlet.servletEjercicio</servlet-class>
+  	<servlet-class>servlets.FormularioServlet</servlet-class>
   </servlet>
-  
+  <servlet>
+  	<servlet-name>AlumnoServlet</servlet-name>
+  	<display-name>AlumnoServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlets.AlumnoServlet</servlet-class>
+  	<init-param>
+  		<param-name>textook</param-name>
+  		<param-value>Estudiante :</param-value>
+  		<description></description>
+  	</init-param>
+  	 <init-param>
+  		<param-name>textoko</param-name>
+  		<param-value>Fallo al guardar el alumno</param-value>
+  		<description></description>
+  	</init-param>
+  	
+  </servlet>
+  <servlet>
+  	<servlet-name>TEst</servlet-name>
+  	<display-name>TEst</display-name>
+  	<description></description>
+  	<servlet-class>servlets.TEst</servlet-class>
+  </servlet>
+
+
+
+
+
   <servlet-mapping>
-  	<servlet-name>ServletLeMans</servlet-name>
-  	<url-pattern>/ServletLeMans</url-pattern>
+  	<servlet-name>sp2</servlet-name>
+  	<url-pattern>/numeropar</url-pattern>
   </servlet-mapping>
+  
   
   <servlet-mapping>
   	<servlet-name>FS</servlet-name>
   	<url-pattern>/formulario</url-pattern>
   </servlet-mapping>
-  
   <servlet-mapping>
   	<servlet-name>FS</servlet-name>
   	<url-pattern>/formulariotest</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AlumnoServlet</servlet-name>
+  	<url-pattern>/alumno</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>TEst</servlet-name>
+  	<url-pattern>/TEst</url-pattern>
+  </servlet-mapping>
+  
+  <session-config>
+  	<session-timeout>300</session-timeout>
+  </session-config>
 </web-app>
