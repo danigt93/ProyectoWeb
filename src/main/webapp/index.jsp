@@ -7,6 +7,7 @@
 <a href="/ProyectoWebProfe/jsps/primerjsp.jsp?numero=8">Llamada jsp</a><br>
 
 <a href="/ProyectoWebProfe/anotacion">Anotacion</a>
+<a href="/ProyectoWeb/FormularioMuebles">Muebles</a>
 
 
 </body>

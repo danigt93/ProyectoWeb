@@ -2,21 +2,21 @@ package pojos;
 
 public class Lampara extends Muebles {
 
-	private String potencia;
+	private double potencia;
 	
 	
-	public Lampara(String nombre, String precio, String potencia) {
-		super("Lampara","Precio");
+	public Lampara(String nombre, double precio, double potencia) {
+		super(nombre, precio);
 		this.potencia = potencia;
 	}
 
 
-	public String getPotencia() {
+	public double getPotencia() {
 		return potencia;
 	}
 
 
-	public void setPotencia(String potencia) {
+	public void setPotencia(double potencia) {
 		this.potencia = potencia;
 	}
 

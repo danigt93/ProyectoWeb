@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="java.util.List"%>
+    pageEncoding="ISO-8859-1" import="java.util.Map"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,20 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<h1>LISTADO MUEBLES</h1>
-
 <%
-	List<Muebles> muebles = (List<Muebles>)request.getAttribute("listadoMuebles");
+	Map<String, Object> mapa = (Map<String, Object>) request.getAttribute("mapa");
+	
 
-	for (Muebles mueble: muebles){
+
 %>
-	<p><%= mueble %></p>
-<%} %>
-<table>
-
-</table>
 
 
+<h1><%=request.getAttribute("subtitulo") %></h1>
 </body>
 </html>

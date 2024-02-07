@@ -3,9 +3,9 @@ package pojos;
 public abstract class Muebles {
 
 	private String nombre;
-	private String precio;
+	private double precio;
 	
-	public Muebles(String nombre, String precio) {
+	public Muebles(String nombre, double precio) {
 		super();
 		this.nombre = nombre;
 		this.precio = precio;
@@ -22,12 +22,12 @@ public abstract class Muebles {
 	}
 
 
-	public String getPrecio() {
+	public double getPrecio() {
 		return precio;
 	}
 
 
-	public void setPrecio(String precio) {
+	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
 

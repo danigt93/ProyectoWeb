@@ -5,8 +5,8 @@ public class Sofa extends Muebles{
 	private String color;
 	
 	
-	public Sofa(String nombre, String precio, String color) {
-		super("Sofa","Precio");
+	public Sofa(String nombre, double precio, String color) {
+		super(nombre, precio);
 		this.color = color;
 	}
 

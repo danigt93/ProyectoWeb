@@ -4,24 +4,28 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<select>
-
-<select name="muebles" multiple><br>
-				
+<form>
+	<select name="tipo"><br>
 				<option value="0">Seleccione una opcion</option>
-		        <option value="opcion1">Mesa</option>
-		        <option value="opcion2">Sofa</option>
-		        <option value="opcion3">Lampara</option>
+		        <option value="M">Mesa</option>
+		        <option value="S">Sofa</option>
+		        <option value="L">Lampara</option>
 		        
 		    </select><br><br>
 		    
 		  Nombre:    <input type="text" name="Nombre"><br><br>
-	      Precio:    <input type="text" name="Apellidos"><br><br>
+	      Precio:    <input type="number" name="Precio"><br><br>
+	      
 	      Estilo:    <input type="text" name="Estilo"><br><br>
 	      Color:     <input type="text" name="Color"><br><br>
 	      Potencia:  <input type="text" name="Potencia"><br><br>
 	      
-	       <input id="guardarBtn" value="Guardar">
+	       <input type="submit" value="Guardar">
+	
+</form>
+
+
+
  	 	  											 
 </body>
 </html>

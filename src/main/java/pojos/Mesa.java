@@ -5,8 +5,8 @@ public class Mesa extends Muebles {
 	private String estilo;
 	
 	
-	public Mesa(String nombre, String precio, String estilo) {
-		super("Mesa","Precio");
+	public Mesa(String nombre, double precio, String estilo) {
+		super(nombre, precio);
 		this.estilo = estilo;
 	}
 
