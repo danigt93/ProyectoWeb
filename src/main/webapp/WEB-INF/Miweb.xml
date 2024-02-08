@@ -13,8 +13,17 @@
   	<servlet-class>servlets.ServletPrueba</servlet-class>
   </servlet>
   
-  
-  
+  <servlet>
+  	<servlet-name>MueblesServlet</servlet-name>
+  	<display-name>MueblesServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlets.MueblesServlet</servlet-class>
+  	<init-param>
+  		<param-name>subtitle</param-name>
+  		<param-value>Subtitulo de la pagina</param-value>
+  	<description></description>
+  	</init-param>
+  </servlet>
   
   <servlet>
   	<servlet-name>FS</servlet-name>
@@ -45,17 +54,6 @@
   	<description></description>
   	<servlet-class>servlets.TEst</servlet-class>
   </servlet>
-  <servlet>
-  	<servlet-name>MueblesServlet</servlet-name>
-  	<display-name>MueblesServlet</display-name>
-  	<description></description>
-  	<servlet-class>servlets.MueblesServlet</servlet-class>
-  	<init-param>
-  		<param-name>subtitle</param-name>
-  		<param-value>Subtitulo de la página</param-value>
-  		<description></description>
-  	</init-param>
-  </servlet>
 
 
 
@@ -82,10 +80,6 @@
   <servlet-mapping>
   	<servlet-name>TEst</servlet-name>
   	<url-pattern>/TEst</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>MueblesServlet</servlet-name>
-  	<url-pattern>/MueblesServlet</url-pattern>
   </servlet-mapping>
   
   <session-config>
