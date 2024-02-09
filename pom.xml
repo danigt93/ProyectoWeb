@@ -49,6 +49,11 @@
 			<artifactId>ojdbc10</artifactId>
 			<version>19.21.0.0</version>
 		</dependency>
+		<dependency>
+			<groupId>es.cursojava.getafe</groupId>
+			<artifactId>PrimerProyecto</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
   </dependencies>
 
   <build>
