@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -44,8 +47,8 @@
 </head>
 <body>
 
-   <form action="http://10.2.1.13:8081/ProyectoWeb/ServletLeMans.java" method="post">
-        <h2><p>Inicio SesiÃ³n</p></h2>
+   <form action="/ProyectoWeb/LeMans" method="post">
+        <h2><p>Inicio Sesión</p></h2>
        <input type="email"
 		 	placeholder="Email" 
 		 	id="email" required><br>

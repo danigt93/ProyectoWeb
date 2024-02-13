@@ -7,10 +7,10 @@
   
   
   <servlet>
-  	<servlet-name>sp2</servlet-name>
-  	<display-name>ServletPrueba2</display-name>
+  	<servlet-name>ServletLeMans</servlet-name>
+  	<display-name>ServletLeMans</display-name>
   	<description></description>
-  	<servlet-class>servlets.ServletPrueba</servlet-class>
+  	<servlet-class>servlets.ServletLeMans</servlet-class>
   </servlet>
   
   <servlet>
@@ -60,8 +60,8 @@
 
 
   <servlet-mapping>
-  	<servlet-name>sp2</servlet-name>
-  	<url-pattern>/numeropar</url-pattern>
+  	<servlet-name>servletLeMans</servlet-name>
+  	<url-pattern>/LeMans</url-pattern>
   </servlet-mapping>
   
   
@@ -69,18 +69,25 @@
   	<servlet-name>FS</servlet-name>
   	<url-pattern>/formulario</url-pattern>
   </servlet-mapping>
+  
+  
   <servlet-mapping>
   	<servlet-name>FS</servlet-name>
   	<url-pattern>/formulariotest</url-pattern>
   </servlet-mapping>
+  
+  
   <servlet-mapping>
   	<servlet-name>AlumnoServlet</servlet-name>
   	<url-pattern>/alumno</url-pattern>
   </servlet-mapping>
+  
+  
   <servlet-mapping>
   	<servlet-name>TEst</servlet-name>
   	<url-pattern>/TEst</url-pattern>
   </servlet-mapping>
+  
   
   <session-config>
   	<session-timeout>300</session-timeout>

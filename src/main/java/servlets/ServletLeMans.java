@@ -28,12 +28,6 @@ public class ServletLeMans extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String usuario = request.getParameter("Email");
-		String password = request.getParameter("Password");
-		String sessionId = request.getSession().getId();
-		
-		
-		System.out.println("El "+ usuario + " ha entrado "+sessionId);
 		
 		
 	}
@@ -44,6 +38,8 @@ public class ServletLeMans extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+
+		String sessionId = request.getSession().getId();
 		
 		List<String> usuarios = new ArrayList<String>();
 		
