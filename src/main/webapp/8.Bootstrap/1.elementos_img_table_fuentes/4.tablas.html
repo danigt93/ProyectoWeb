@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tablas</title>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<script src="../js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<!-- Colores -->
+				<!-- Tenemos variantes disponibles para toda la tabla, toda una fila, o una celda -->
+				<!-- 
+					.table-primary
+					.table-secondary
+					.table-success
+					.table-danger
+					.table-warning
+					.table-info
+
+					.table-light
+					.table-dark
+				-->
+
+
+				<!-- Clases de tablas -->
+				<!-- Estas clases tambien estan disponbiles para los diferentes colores -->
+				<!-- 
+					.table-striped - Colorea en formato zebra para mejor lectura.
+					.table-hover - Colorea las filas sobre las que pasamos el cursor.
+					.table-bordered - Agrega bordes a la tabla.
+					.border-danger - Colorea el borde.
+					.table-borderless - Quita los bordes, incluso de las filas.
+					.table-sm - Hace una tabla mas compacta quitandole padding a las celdas
+				-->
+
+				<!-- Tabla Responsive -->
+				<!-- Podemos encerrar la tabla en un div con la clase .table-responsive para hacerla responsive -->
+
+				<div class="table-responsive">
+				<!-- aparece scroll pero no para la página sino solo para la tabla-->
+					<table>
+<!-- 					<table class="table"> -->
+<!-- 					<table class="table table-striped"> cambia color a filas impares -->
+<!--  					<table class="table table-striped table-hover"> al pasar se ilumina la fila -->
+<!--  						<table class="table table-striped table-hover table-sm"> compacta la tabla -->
+<!--  						<table class="table table-striped table-hover table-sm table-dark"> La pone oscura -->
+						<caption>Lista de jugadores retirados</caption>
+						<thead>
+<!-- 							<tr class="table-dark"> -->
+							<tr>
+								<th>Nombre</th>
+								<th>Edad</th>
+								<th>Pais</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Zidane</td>
+								<td>35</td>
+								<td>Francia</td>
+							</tr>
+							<tr>
+<!-- 							<tr class="table-primary"> -->
+								<td>Casillas</td>
+								<td>34</td>
+								<td>España</td>
+							</tr>
+							<tr>
+								<td>Tassotti</td>
+								<td>38</td>
+								<td>Italia</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html> 
