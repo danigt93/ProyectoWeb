@@ -6,15 +6,18 @@
   <display-name>Archetype Created Web Application</display-name>
   
   
+
   <servlet>
-  	<servlet-name>sp2</servlet-name>
-  	<display-name>ServletPrueba2</display-name>
+  	<servlet-name>MueblesServlet</servlet-name>
+  	<display-name>MueblesServlet</display-name>
   	<description></description>
-  	<servlet-class>servlets.ServletPrueba</servlet-class>
+  	<servlet-class>servlets.MueblesServlet</servlet-class>
+  	<init-param>
+  		<param-name>subtitle</param-name>
+  		<param-value>Subtitulo de la pagina</param-value>
+  	<description></description>
+  	</init-param>
   </servlet>
-  
-  
-  
   
   <servlet>
   	<servlet-name>FS</servlet-name>
@@ -45,48 +48,32 @@
   	<description></description>
   	<servlet-class>servlets.TEst</servlet-class>
   </servlet>
-  <servlet>
-  	<servlet-name>MueblesServlet</servlet-name>
-  	<display-name>MueblesServlet</display-name>
-  	<description></description>
-  	<servlet-class>servlets.MueblesServlet</servlet-class>
-  	<init-param>
-  		<param-name>subtitle</param-name>
-  		<param-value>Subtitulo de la página</param-value>
-  		<description></description>
-  	</init-param>
-  </servlet>
 
-
-
-
-
-  <servlet-mapping>
-  	<servlet-name>sp2</servlet-name>
-  	<url-pattern>/numeropar</url-pattern>
-  </servlet-mapping>
   
   
   <servlet-mapping>
   	<servlet-name>FS</servlet-name>
   	<url-pattern>/formulario</url-pattern>
   </servlet-mapping>
+  
+  
   <servlet-mapping>
   	<servlet-name>FS</servlet-name>
   	<url-pattern>/formulariotest</url-pattern>
   </servlet-mapping>
+  
+  
   <servlet-mapping>
   	<servlet-name>AlumnoServlet</servlet-name>
   	<url-pattern>/alumno</url-pattern>
   </servlet-mapping>
+  
+  
   <servlet-mapping>
   	<servlet-name>TEst</servlet-name>
   	<url-pattern>/TEst</url-pattern>
   </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>MueblesServlet</servlet-name>
-  	<url-pattern>/MueblesServlet</url-pattern>
-  </servlet-mapping>
+  
   
   <session-config>
   	<session-timeout>300</session-timeout>

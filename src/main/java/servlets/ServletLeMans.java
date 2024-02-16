@@ -43,13 +43,16 @@ public class ServletLeMans extends HttpServlet {
 		
 		List<String> usuarios = new ArrayList<String>();
 		
-		if (request.getParameter("usuario")!=null) {
+		if (request.getParameter("Email") != null && request.getParameter("Password") != null) {
 			String usuario = request.getParameter("Email");
 			String password = request.getParameter("Password");
 			System.out.println("Se ha mandado el valor " + usuario + password);
 			response.getWriter().append("<H5>INSERTADO CORRECTAMENTE</h5>");
 			response.getWriter().append("<table>");
 			response.getWriter().append("<th>Nombre</th><th>Apellidos</th>");
+			
+			usuarios.add(usuario);
+			
 			for (String usuario1 : usuarios) {
 				response.getWriter().append("<tr>");
 				

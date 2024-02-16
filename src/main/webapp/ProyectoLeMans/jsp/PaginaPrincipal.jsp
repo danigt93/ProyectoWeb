@@ -13,7 +13,7 @@
 		}
 		
 		body{
-			background-image: url(./imgLeMans/bathurst-1000-wednesday-1-2.jpg);
+			background-image: url("../imgLeMans/bathurst-1000-wednesday-1-2.jpg");
 	   	 	background-size: cover;
 		}
 		
