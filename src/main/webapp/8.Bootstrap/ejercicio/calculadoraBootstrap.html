@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- Le indica a los dispositivos moviles como readaptarse -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bootstrap 5</title>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row align-items-center bg-dark">
+                        <div class="col-12 col-md-6 align-self-center">
+								<h3 class="text-warning">CALCULADORA BOOTSTRAP</h3>
+							</div>
+							
+							<div class="col-12 col-md-6">
+								<img class="img-fluid img-thumbnail" src="../1.elementos_img_table_fuentes/img/bg.jpg" alt="">
+							</div>
+							
+                        </div>
+                        
+                 
+			    	<div class="col-12">
+						 
+						<img class="img-fluid" width="400" src="./img/bg2.jpg" alt="">
+					</div>
+                       
+        <div class="row"> 
+			
+			 <div class="col-10"><input type="number" class="form-control mb-2" id="display"></div>
+			 <div class="col-2"><button class="btn btn-danger btn-block" onclick="clearDisplay()">Reset</button></div>
+			
+		</div>
+                       
+                       
+						<div class="row">
+                            <div class="col"><button class="btn btn-primary btn-block" onclick="addToDisplay('1')">1</button></div>
+                            <div class="col"><button class="btn btn-primary btn-block" onclick="addToDisplay('2')">2</button></div>
+                            <div class="col"><button class="btn btn-primary btn-block" onclick="addToDisplay('3')">3</button></div><br>
+                            <div class="col"><button class="btn btn-primary btn-block" onclick="addToDisplay('4')">4</button></div>
+                            <div class="col"><button class="btn btn-primary btn-block" onclick="addToDisplay('5')">5</button></div>
+                            <div class="col"><button class="btn btn-primary btn-block" onclick="addToDisplay('6')">6</button></div><br>
+                            <div class="col"><button class="btn btn-primary btn-block" onclick="addToDisplay('7')">7</button></div>
+                            <div class="col"><button class="btn btn-primary btn-block" onclick="addToDisplay('8')">8</button></div>
+                            <div class="col"><button class="btn btn-primary btn-block" onclick="addToDisplay('9')">9</button></div><br>
+                            <div class="col"><button class="btn btn-primary btn-block" onclick="addToDisplay('0')">0</button></div>
+                        </div>
+
+                        <div class="row">
+                            
+                            <div class="col"><button class="btn btn-warning btn-block" onclick="addToDisplay('+')">Suma</button></div>
+                            <div class="col"><button class="btn btn-warning btn-block" onclick="addToDisplay('-')">Resta</button></div>
+                            <div class="col"><button class="btn btn-warning btn-block" onclick="calculate()">Igual</button></div>
+                            
+                        </div>
+                        
+						  
+                        <div class="row bg-dark" style= "text-align: center;">
+                        	<div class="col-12 align-self-center">
+								<p class="text-secondary">PIE DE PAGINA</p>
+							</div>
+                        </div>
+    
+</body>
+</html>

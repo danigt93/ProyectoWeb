@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Grid</title>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<style>
+		.row > div {
+			background: #f2f2f2;
+			margin: 10px 0;
+			padding: 40px;
+		}
+	</style>
+	<script src="../js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+	<!-- El container es el contenedor principal, en el iran todas las filas y columnas -->
+	<!-- Con el container podemos centrar nuestra pagina -->
+	<div class="container"><!-- "container-fluid" elimina espacio en blanco a derecha e izquierda ocupa 100% de la pantalla-->
+		<!-- Para meter contenido en un contenedor tenemos que agregar filas. Las filas (row) son grupos HORIZONTALES de columnas-->
+
+		<!-- Los tamaños de Columna en Bootsrap 5 son:
+			.col 		Extra Pequeño (Extra Small) - Smartphones Vertical		Menos de 576px
+			.col-sm 	Pequeño (Small) - Smartphones Vertical	 				Mas de 576px y Menos de 768px
+			.col-md 	Mediano (Medium) - Tablets 								Mas de 768px y Menos de 992px
+			.col-lg 	Largo (Large) - Computadoras							Mas de 992px y Menos de 1200px
+			.col-xl 	Extra Largo (Extra Large) - Computadoras				Mas de 1200px
+			.col-xxl 	Extra Extra Largo (Extra Extra Large) - Televisiones 	Mas de 1400px
+			
+			https://getbootstrap.com/docs/5.0/layout/breakpoints/
+		-->
+
+		<div class="row">
+<!-- 			<div class="col"> -->
+			<div class="col-6">
+<!-- 			<div class="col-12"> -->
+	 			<div class="col-12 col-sm-6 col-md-3">
+				<h1>Hola Mundo</h1>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores odio nihil deleniti aperiam magni laudantium delectus, dolor dolorum odit assumenda fuga commodi, harum rem nobis similique quasi vel suscipit a!</p>
+				<button class="btn btn-primary">Ver Más</button>
+			</div>
+			
+<!-- 			<div class="col"> -->
+<!-- 			<div class="col-6"> -->
+<!-- 			<div class="col-12 col-sm-6"> -->
+				<h1>Hola Mundo</h1>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores odio nihil deleniti aperiam magni laudantium delectus, dolor dolorum odit assumenda fuga commodi, harum rem nobis similique quasi vel suscipit a!</p>
+				<button class="btn btn-primary">Ver Más</button>
+			</div>
+
+			<div class="col">
+<!-- 			<div class="col-12"> -->
+				<h1>Hola Mundo</h1>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores odio nihil deleniti aperiam magni laudantium delectus, dolor dolorum odit assumenda fuga commodi, harum rem nobis similique quasi vel suscipit a!</p>
+				<button class="btn btn-primary">Ver Más</button>
+			</div>
+		</div>
+	</div>
+
+	
+</body>
+</html>
