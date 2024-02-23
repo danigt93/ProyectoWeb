@@ -58,7 +58,7 @@ public class ServletLeMans extends HttpServlet {
 				
 				response.getWriter().append("</tr>");
 			}
-			
+
 			response.getWriter().append("</table>");
 			
 		}else {
@@ -69,3 +69,4 @@ public class ServletLeMans extends HttpServlet {
 	}
 	
 }
+

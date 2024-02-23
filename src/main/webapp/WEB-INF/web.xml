@@ -48,6 +48,13 @@
   	<description></description>
   	<servlet-class>servlets.TEst</servlet-class>
   </servlet>
+  
+   <servlet>
+  	<servlet-name>ServletLeMans</servlet-name>
+  	<display-name>ServletLeMans</display-name>
+  	<description></description>
+  	<servlet-class>servlets.ServletLeMans</servlet-class>
+  </servlet>
 
   
   
@@ -72,6 +79,11 @@
   <servlet-mapping>
   	<servlet-name>TEst</servlet-name>
   	<url-pattern>/TEst</url-pattern>
+  </servlet-mapping>
+  
+    <servlet-mapping>
+  	<servlet-name>ServletLeMans</servlet-name>
+  	<url-pattern>/LeMans</url-pattern>
   </servlet-mapping>
   
   
