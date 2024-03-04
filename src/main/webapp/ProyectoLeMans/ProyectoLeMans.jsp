@@ -13,7 +13,7 @@
 		}
 		
 		body{
-			background-image: url("../imgLeMans/bathurst-1000-wednesday-1-2.jpg");
+			background-image: url("./imgLeMans/bathurst-1000-wednesday-1-2.jpg");
 	   	 	background-size: cover;
 	   	 	margin: 0;
             padding: 0;
@@ -42,28 +42,20 @@
             color: #fff;
             cursor: pointer;
         }
-        
-/*         #botones-derecha { */
-/*             position: absolute; */
-/*             top: 10px; */
-/*             right: 10px; */
-/*         } */
 
-/*         #botones-derecha button { */
-/*             max-width: 2cm; */
-/*         } */
-
-/*         #botones-derecha img { */
-/*             width: auto; */
-/*             height: auto; */
-/*         } */
+         #botones-derecha button { 
+             max-width: 2cm;
+             position: absolute; 
+             top: 10px; 
+             right: 10px;
+         }
         
     </style>
 </head>
 <body>
 
 
-   <form action="/ProyectoWeb/LeMans" method="post">
+   <form action="/ProyectoWeb/ProyectoLeMans" method="post">
   	 <h2><p>Inicio Sesión</p></h2>
        <input type="email"
 		 	placeholder="Email" 
@@ -78,13 +70,17 @@
     </form>
 
 
-<!--    	<button type="button" onmouseover="New"> -->
-<!-- 	    	<img src="../imgLeMans/ae86.png" width="200" height="150" alt="Nuevo Usuario"> -->
-<!-- 		</button> -->
+   		<button type="button" onmouseover="Add">
+	    	<img src="./imgLeMans/Login.jpg" width="25" height="25" alt="Nuevo Usuario">
+		</button>
 		
-<!-- 		<button type="button" onmouseover="Delete"> -->
-<!--  	    	<img src="../imgLeMans/180sx.png" width="200" height="150" alt="Borrar Usuario"> -->
-<!-- 		</button> -->
+		<button type="button" onmouseover="Mod">
+ 	    	<img src="./imgLeMans/Add.png" width="25" height="25" alt="Modificar Usuario">
+		</button>
+		
+		<button type="button" onmouseover="Delete">
+ 	    	<img src="./imgLeMans/Exit.jpg" width="25" height="25" alt="Borrar Usuario">
+		</button>
 		
 </body>
 </html>
