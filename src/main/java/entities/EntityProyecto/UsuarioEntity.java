@@ -1,10 +1,15 @@
 package entities.EntityProyecto;
 
+import java.util.Set;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 
@@ -16,10 +21,7 @@ public class UsuarioEntity {
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		private Long id;
-		
-		
-		@Column(length = 9, name = "DNI_USUARIO", unique = true, nullable = false)
-		
+
 		private String nombre;
 		private String apellidos;
 		private String dni;
@@ -28,16 +30,24 @@ public class UsuarioEntity {
 		private String password;
 		private String email;
 		private int tlf;
+		
+		@Column(length = 9, name = "DNI_USUARIO", unique = true, nullable = false)
+		
 		private String fechaNac;
 		
+		@ManyToMany
+	    @JoinTable(name = "Usuario_Rol",
+	            joinColumns = @JoinColumn(name = "idUsuario"),
+	            inverseJoinColumns = @JoinColumn(name = "idRol"))
 		
+	    private Set<RolEntity> roles;
 	
 		public UsuarioEntity(Long id, String nombre, String apellidos, String dni, String sexo, String idUsuario,
-			String password, String email, int tlf, String fechaNac) {
+			String password, String email, int tlf, String fechaNac, Set<RolEntity> roles) {
 			super();
 			
 			this.id = id;
-			this.nombre = nombre;
+	 		this.nombre = nombre;
 			this.apellidos = apellidos;
 			this.dni = dni;
 			this.sexo = sexo;
@@ -46,6 +56,7 @@ public class UsuarioEntity {
 			this.email = email;
 			this.tlf = tlf;
 			this.fechaNac = fechaNac;
+			this.roles = roles;
 		}
 
 
@@ -170,12 +181,24 @@ public class UsuarioEntity {
 
 
 
+		public Set<RolEntity> getRoles() {
+			return roles;
+		}
+
+
+
+		public void setRoles(Set<RolEntity> roles) {
+			this.roles = roles;
+		}
+
+
+
 		@Override
 		public String toString() {
 			return "UsuarioEntity [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", dni=" + dni
 					+ ", sexo=" + sexo + ", idUsuario=" + idUsuario + ", password=" + password + ", email=" + email
-					+ ", tlf=" + tlf + ", fechaNac=" + fechaNac + "]";
+					+ ", tlf=" + tlf + ", fechaNac=" + fechaNac + ", roles=" + roles + "]";
 		}
-		
+
 		
 	}
