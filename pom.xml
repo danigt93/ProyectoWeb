@@ -33,6 +33,14 @@
 			        <artifactId>hibernate-core</artifactId>
 			        <version>6.1.7.Final</version>
 			    </dependency>
+			    
+			    
+				<!--https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-servlet-api -->
+				<dependency>
+					<groupId>org.apache.tomcat</groupId>
+					<artifactId>tomcat-servlet-api</artifactId>
+					<version>10.1.8</version>
+				</dependency>
 			  
 			    <dependency>
 			      <groupId>junit</groupId>

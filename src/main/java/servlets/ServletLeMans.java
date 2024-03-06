@@ -40,7 +40,7 @@ public class ServletLeMans extends HttpServlet {
             request.setAttribute("usuarios", usuarios);
 
             // Enviar la solicitud a la página de gestión de usuarios (gestionUsuarios.jsp)
-            request.getRequestDispatcher("/gestionUsuarios.jsp").forward(request, response);
+            request.getRequestDispatcher("ProyectoLeMans/ListaUsuarios.jsp").forward(request, response);
 
         } catch (SQLException e) {
             e.printStackTrace();
