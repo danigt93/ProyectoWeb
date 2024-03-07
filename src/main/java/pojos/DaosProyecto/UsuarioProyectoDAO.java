@@ -1,125 +1,135 @@
 package pojos.DaosProyecto;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
-import es.curso.java.ClasesProyecto.UsuarioProyecto;
+
+import entities.EntityProyecto.UsuarioEntity;
+import es.curso.java.hibernate.ejercicios.ejercicio1.entity.UserEntity;
+import es.curso.java.hibernate.util.JpaUtil;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.NoResultException;
+import jakarta.persistence.Query;
+import jakarta.persistence.TypedQuery;
 
 
 
 public class UsuarioProyectoDAO {
 
-	    private Connection connection;
+	    private EntityManager em ;
 
-	    public UsuarioProyectoDAO(Connection connection) {
-	        this.connection = connection;
-	    }
-
+	    
+	    public UsuarioProyectoDAO() {
+			this.em = JpaUtil.getEM("hibernateMySQL");
+		}
+	    
 	    // Método para insertar un usuario en la base de datos
 	    
-	    public void insertUsuario(UsuarioProyecto usuario) throws SQLException {
-	        String sql = "INSERT INTO TB_USUARIOLEMANS (nombre, apellidos, dni, sexo, contraseña, email, telefono, fecha_nacimiento) " +
-	                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-
-	        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-	            preparedStatement.setString(1, usuario.getNombre());
-	            preparedStatement.setString(2, usuario.getApellidos());
-	            preparedStatement.setString(3, usuario.getDni());
-	            preparedStatement.setString(4, usuario.getSexo());
-	            preparedStatement.setString(5, usuario.getContraseña());
-	            preparedStatement.setString(6, usuario.getEmail());
-	            preparedStatement.setInt(7, usuario.getTelefono());
-	            preparedStatement.setString(8, usuario.getFechaNacimiento());
-
-	            preparedStatement.executeUpdate();
-	        }
-	    }
+	    
+	    public void insertarUsuario (UsuarioEntity user) {
+			 em.getTransaction().begin();
+			 try {
+				 em.persist(user);
+				 
+				 em.getTransaction().commit();
+			 }catch(Exception e) {
+				 em.getTransaction().rollback();
+			 }
+		     
+		}
+	    
 
 	    // Método para obtener todos los usuarios de la base de datosç
 	    
-	    public List<UsuarioProyecto> getAllUsuarios() throws SQLException {
-	        List<UsuarioProyecto> usuarios = new ArrayList<>();
-	        String sql = "SELECT * FROM TB_USUARIOLEMANS";
+	    public List<UsuarioEntity> getAllUsuarios(){
+	        
+	    	List<UsuarioEntity> usuarios;
+	    		
+	    	usuarios = em.createQuery("from UsuarioEntity", UsuarioEntity.class)
+	    			  .getResultList();
+	    		
+	    		return usuarios;
+	    	}
+	    
 
-	        try (PreparedStatement preparedStatement = connection.prepareStatement(sql);
-	             ResultSet resultSet = preparedStatement.executeQuery()) {
+	    public void update(String id, UsuarioEntity userModified) {
+	    		
+	    		TypedQuery <UsuarioEntity> query = em.createQuery(
+	    				"from UsuarioEntity where id=?1",
+	    				UsuarioEntity.class);
+	    		query.setParameter(1, id);
+	    		
+	    		try {
+	    			UsuarioEntity usuario = query.getSingleResult();
+	    			em.getTransaction().begin();
+	    			//user.setId(userModified.getId());
+	    			usuario.setNombre(userModified.getNombre());
+	    			usuario.setApellidos(userModified.getApellidos());
 
-	            while (resultSet.next()) {
-	            	UsuarioProyecto usuario = new UsuarioProyecto();
-	                usuario.setIdUsuario(resultSet.getInt("idUsuario"));
-	                usuario.setNombre(resultSet.getString("nombre"));
-	                usuario.setApellidos(resultSet.getString("apellidos"));
-	                usuario.setDni(resultSet.getString("dni"));
-	                usuario.setSexo(resultSet.getString("sexo"));
-	                usuario.setContraseña(resultSet.getString("contraseña"));
-	                usuario.setEmail(resultSet.getString("email"));
-	                usuario.setTelefono(resultSet.getInt("telefono"));
-	                usuario.setFechaNacimiento(resultSet.getString("fecha_nacimiento"));
+	    			em.merge(usuario);
+	    			
+	    			em.getTransaction().commit();
+	    			
+	    		}catch (NoResultException nre) {
+	    			System.out.println("Dni "+ id + " no encontrado");
+	    		}catch (Exception e) {
+	    			System.out.println(e.getMessage());
+	    			e.printStackTrace();
+	    			em.getTransaction().rollback();
+	    		}
+	    		
+	    	}
 
-	                usuarios.add(usuario);
-	                
-		            }
-		        }
-
-	        return usuarios;
+	    public UsuarioEntity getUsuarioId(String id) {
+	    	UsuarioEntity usuario = null;
+	    	
+	    	
+    		TypedQuery <UsuarioEntity> query = em.createQuery(
+    				"from UsuarioEntity where id=?1",
+    				UsuarioEntity.class);
+    		query.setParameter(1, id);
+    		
+    		try {
+    			usuario = query.getSingleResult();
+   
+    		}catch (NoResultException nre) {
+    			System.out.println("ID "+ id + " no encontrado");
+    		}catch (Exception e) {
+    			System.out.println(e.getMessage());
+    			e.printStackTrace();
+    			em.getTransaction().rollback();
+    		}
+			return usuario;
+    			
 	    }
-
-	    public void update(UsuarioProyecto usuario) throws SQLException {
-	        String sql = "UPDATE usuarios SET nombre=?, apellidos=?, dni=?, sexo=?, contraseña=?, " +
-	                     "email=?, telefono=?, fecha_nacimiento=? WHERE idUsuario=?";
-
-	        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-	            preparedStatement.setString(1, usuario.getNombre());
-	            preparedStatement.setString(2, usuario.getApellidos());
-	            preparedStatement.setString(3, usuario.getDni());
-	            preparedStatement.setString(4, usuario.getSexo());
-	            preparedStatement.setString(5, usuario.getContraseña());
-	            preparedStatement.setString(6, usuario.getEmail());
-	            preparedStatement.setInt(7, usuario.getTelefono());
-	            preparedStatement.setString(8, usuario.getFechaNacimiento());
-	            preparedStatement.setInt(9, usuario.getIdUsuario());
-
-	            preparedStatement.executeUpdate();
-	        }
-	    }
-
-	    public void delete(int idUsuario) throws SQLException {
-	        String sql = "DELETE FROM TB_USUARIOLEMANS WHERE idUsuario=?";
-
-	        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-	            preparedStatement.setInt(1, idUsuario);
-	            preparedStatement.executeUpdate();
-	        }
-	    }
-
-	    public List <UsuarioProyecto> getById(int idUsuario) throws SQLException {
-	        String sql = "SELECT * FROM TB_USUARIOLEMANS WHERE idUsuario=?";
-	        UsuarioProyecto usuario = null;
-
-	        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-	            preparedStatement.setInt(1, idUsuario);
-	            try (ResultSet resultSet = preparedStatement.executeQuery()) {
-	                if (resultSet.next()) {
-	                	
-	                    usuario = new UsuarioProyecto();
-	                    
-	                    usuario.setIdUsuario(resultSet.getInt("idUsuario"));
-	                    usuario.setNombre(resultSet.getString("nombre"));
-	                    usuario.setApellidos(resultSet.getString("apellidos"));
-	                    usuario.setDni(resultSet.getString("dni"));
-	                    usuario.setSexo(resultSet.getString("sexo"));
-	                    usuario.setContraseña(resultSet.getString("contraseña"));
-	                    usuario.setEmail(resultSet.getString("email"));
-	                    usuario.setTelefono(resultSet.getInt("telefono"));
-	                    usuario.setFechaNacimiento(resultSet.getString("fecha_nacimiento"));
-	                }
-	            }
-	        }
-	        return (List<UsuarioProyecto>) usuario;
-	    }
-	 }
+    			
+	    public void borrarUsuarioPorNombre (String nombre) {
+			 em.getTransaction().begin();
+			 try {
+				List<UsuarioEntity> usuarios = getUsuarioByName(nombre);
+	            
+	            for (UsuarioEntity userEntity : usuarios) {
+	            	em.remove(userEntity);
+				}
+	            
+	            em.getTransaction().commit();
+			 }catch(Exception e) {
+				 em.getTransaction().rollback();
+			 }
+		     
+		} 
+	    
+	    
+		    public List<UsuarioEntity> getUsuarioByName (String name){
+				List<UsuarioEntity> usuarios;
+				
+				Query query = em.createQuery(
+						"from UsuarioEntity ue where ue.nombre=?1", 
+						UserEntity.class);
+				
+				query.setParameter(1, name);
+				usuarios = query.getResultList();
+				
+				return usuarios;
+			}
+}
 	
 

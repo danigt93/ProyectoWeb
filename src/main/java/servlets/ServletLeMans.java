@@ -2,26 +2,27 @@ package servlets;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import antlr.Utils;
 import es.curso.java.ClasesProyecto.UsuarioProyecto;
 import es.curso.java.ddbb.ConexionBaseDeDatos;
-import es.curso.java.lambdas.advanced.models.Usuario;
+import es.curso.java.hibernate.basics.daos.AlumnoHibernateDAO;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import pojos.DaosProyecto.UsuarioProyectoDAO;
 
 @WebServlet("/usuarios")
 public class ServletLeMans extends HttpServlet {
 
     private UsuarioProyectoDAO usuarioProyectoDAO;
+	private static final Logger logger = LogManager.getLogger(AlumnoHibernateDAO.class);
 
     @Override
     public void init() {
@@ -51,13 +52,15 @@ public class ServletLeMans extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         // Manejar la creación de nuevos usuarios
-        String nombre = request.getParameter("nombre");
-        String apellidos = request.getParameter("apellidos");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        logger.info(email);
+        logger.info(password);
         // Otros parámetros...
 
         UsuarioProyecto nuevoUsuario = new UsuarioProyecto();
-        nuevoUsuario.setNombre(nombre);
-        nuevoUsuario.setApellidos(apellidos);
+        nuevoUsuario.setNombre(email);
+        nuevoUsuario.setApellidos(password);
         // Configurar otros atributos del usuario...
 
         try {

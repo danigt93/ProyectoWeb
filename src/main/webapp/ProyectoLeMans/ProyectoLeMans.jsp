@@ -55,15 +55,16 @@
 <body>
 
 
-   <form action="/ProyectoWeb/ProyectoLeMans" method="post">
-  	 <h2><p>Inicio Sesión</p></h2>
+   <form action="/ProyectoWeb/ServletLeMans" method="post">
+  	 <h2>Inicio Sesión</h2>
        <input type="email"
 		 	placeholder="Email" 
-		 	id="email" required><br>
+		 	id="email" name ="email" required><br>
 		 	
 	   <input type="password"
 		 	placeholder="Password"
             id="password"
+            name="password"
             maxlength="10"
             required><br>
         <input type="submit" value="Log in">

@@ -83,7 +83,7 @@
   
     <servlet-mapping>
   	<servlet-name>ServletLeMans</servlet-name>
-  	<url-pattern>/ProyectoLeMans</url-pattern>
+  	<url-pattern>/ServletLeMans</url-pattern>
   </servlet-mapping>
   
   

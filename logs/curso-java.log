@@ -1,0 +1,1 @@
+20:37:35.994 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions - Access denied for user 'root'@'localhost' (using password: YES)

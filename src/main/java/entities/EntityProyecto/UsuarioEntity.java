@@ -58,6 +58,21 @@ public class UsuarioEntity {
 			this.fechaNac = fechaNac;
 			this.roles = roles;
 		}
+		
+		public UsuarioEntity(String nombre, String apellidos, String dni, String sexo, String idUsuario,
+				String password, String email, int tlf, String fechaNac, Set<RolEntity> roles) {
+				super();
+		 		this.nombre = nombre;
+				this.apellidos = apellidos;
+				this.dni = dni;
+				this.sexo = sexo;
+				this.idUsuario = idUsuario;
+				this.password = password;
+				this.email = email;
+				this.tlf = tlf;
+				this.fechaNac = fechaNac;
+				this.roles = roles;
+			}
 
 
 
