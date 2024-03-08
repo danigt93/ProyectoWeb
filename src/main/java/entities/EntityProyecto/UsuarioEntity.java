@@ -42,6 +42,13 @@ public class UsuarioEntity {
 		
 	    private Set<RolEntity> roles;
 	
+		
+		public UsuarioEntity() {
+				super();
+			}
+
+		
+		
 		public UsuarioEntity(Long id, String nombre, String apellidos, String dni, String sexo, String idUsuario,
 			String password, String email, int tlf, String fechaNac, Set<RolEntity> roles) {
 			super();
